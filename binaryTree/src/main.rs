@@ -1,8 +1,7 @@
 use std::io::{stdin};
-//use std::collections::{LinkedList};
-//use daily_tree::Node;
-mod tree_helper;
 use daily_tree::{Node};
+mod tree_helper_recursive;
+mod tree_helper_non_recursive;
 
 fn main() {
     println!("Hello, world!");
@@ -56,21 +55,28 @@ fn  create_tree() -> Node {
 
 fn tree_fn() {
     //let mut tree = create_tree();
+    use tree_helper_recursive::*;
     let mut counter = 1;
-    let tree = tree_helper::generate_tree(3, &mut counter);
+    let tree = generate_tree(3, &mut counter);
+    println!("=======Recursive======");
     tree.as_ref().unwrap().print_tree();
-    println!("========OG========");
-    tree_helper::print_tree(&tree, 0);
+    println!("======================");
+    print_tree(&tree, 0);
     println!("======Inverted========");
-    let inverted_tree = tree_helper::invert_tree(tree);
-    tree_helper::print_tree(&inverted_tree, 0);
-    println!("===================");
+    let inverted_tree = invert_tree(tree);
+    print_tree(&inverted_tree, 0);
+    println!("\n");
+    
+    println!("=========Non==========");
+    println!("======Recursive=======");
+    use tree_helper_non_recursive::*;
+    let mut x = 3;
+    let tree_non_recur = generate_tree_non_recur(x);
+    print_tree_non_recur(&tree_non_recur);
+    println!("=======Inverted=======");
+    print_tree_non_recur(&invert_tree_non_recur(&tree_non_recur));
+    println!("======================");
 
-    // let mut list: LinkedList<i32> = LinkedList::new();
-    // let mut k = tree.tree_to_list(&mut list);
-    // for k in list.iter() {
-    //     println!("{}", k);
-    // }
     
 }
 
