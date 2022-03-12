@@ -1,0 +1,1 @@
+/Users/jose/Desktop/tutorials/rustex/practice/daily_b_v3/target/debug/daily_b_v3: /Users/jose/Desktop/tutorials/rustex/practice/daily_b_v3/src/lib.rs /Users/jose/Desktop/tutorials/rustex/practice/daily_b_v3/src/main.rs
